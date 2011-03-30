@@ -1,0 +1,9 @@
+piece base, body;
+
+Create() {
+	sleep 30;
+}
+
+HitByWeaponId() {
+	return 0;
+}

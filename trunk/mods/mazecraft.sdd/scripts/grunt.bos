@@ -1,0 +1,8 @@
+#include "commonUnit.h"
+
+HitByWeaponId(z,x,id,d) {
+	if (id==2) { //grenade
+		start-script BlockGun();
+	}
+	return 100;
+}

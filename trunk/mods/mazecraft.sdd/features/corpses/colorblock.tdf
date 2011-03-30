@@ -1,0 +1,16 @@
+[COLORBLOCK]
+{
+	description=Color Block;
+	object=colorblock.s3o;
+	footprintx=2;
+	footprintz=2;
+	height=32;
+	blocking=1;
+	hitdensity=100;
+	metal=64;
+	damage=400;
+	reclaimable=0;
+	energy=0;
+	upright=1;
+}
+
