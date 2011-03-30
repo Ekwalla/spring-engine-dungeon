@@ -1,0 +1,17 @@
+[regular] {
+	grunt=1;
+	jumper=1;
+	recruit=1;
+	grenadier=1;
+	cutter=1;
+}
+
+[armored] {
+	armor=1;
+	base=1;
+	sepcore=1;
+}
+
+[invulnerable] {
+	point=1;
+}

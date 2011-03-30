@@ -1,0 +1,13 @@
+[SIDE0]
+{
+	name=Cubire;
+	commander=grenadier;
+}
+[SIDE1]
+{
+	name=Spheratists;
+	commander=recruit;
+}
+[CANBUILD]
+{
+}

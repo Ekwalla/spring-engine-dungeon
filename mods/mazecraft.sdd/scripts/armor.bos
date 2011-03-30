@@ -1,0 +1,12 @@
+#include "commonUnit.h"
+#include "exptype.h"
+
+HitByWeaponId(z,x,id,d) {
+		if (id==2) { //grenade
+		start-script BlockGun();
+	}
+	else {
+		return 5;
+	}
+	return 100;
+}

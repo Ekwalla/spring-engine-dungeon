@@ -1,0 +1,473 @@
+[GrenadeTrail] {
+	[smoke]
+	{
+		class=CSimpleParticleSystem;
+		[properties] {
+			sizegrowth=0;
+			sizemod=1;
+			pos=0,0,0;
+			emitVector=0,1,0;
+			gravity=0, 0, 0;
+			Texture=boxlined;
+			colorMap=0 1 0 .1   0 0 0 .6   0 0 0 0;
+			airdrag=1;
+			particleLife=10;
+			particleLifeSpread=10;
+			numParticles=3;
+			particleSpeed=.1;
+			particleSpeedSpread=.4;
+			particleSize=1;
+			particleSizeSpread=3;
+			emitRot=0;
+			emitRotSpread=90;
+			directional=0;
+		}
+		air=1;
+		ground=1;
+		water=1;
+		count=1;
+	}
+	[groundflash]
+	{
+		flashSize = 10;   // flash size
+		flashAlpha = .3;    // initial alpha of the flash
+		circleGrowth = 0; // size increase/frame
+		circleAlpha = 0;   // initial alpha of the ring
+		ttl = 3;          // number of frames
+		color = 0,1,0;    // color RGB
+	}
+}
+
+
+[GrenadeBlast] {
+	[smoke]
+	{
+		class=CSimpleParticleSystem;
+		[properties] {
+			sizegrowth=0;
+			sizemod=1;
+			pos=0,0,0;
+			emitVector=0,1,0;
+			gravity=0, 0, 0;
+			Texture=boxlined;
+			colorMap=0 1 0 .1   0 0 0 .6   0 0 0 0;
+			airdrag=.9;
+			particleLife=10;
+			particleLifeSpread=10;
+			numParticles=40;
+			particleSpeed=5;
+			particleSpeedSpread=9;
+			particleSize=4;
+			particleSizeSpread=7;
+			emitRot=0;
+			emitRotSpread=90;
+			directional=0;
+		}
+		air=1;
+		ground=1;
+		water=1;
+		count=1;
+	}
+	[shockwave]
+	{
+		class = CBitmapMuzzleFlame;
+		[properties]
+		{
+			dir = 0,1,0.00001;
+			pos = 0, 5, 0;
+			colorMap=0 .2 0 .02   0 0 0 0;
+			size=64;
+			length=1;
+			sizeGrowth=2;
+			ttl=30;
+			frontOffset=0;
+			sideTexture=null;
+			frontTexture=shockwave;
+		}
+		water=1;
+		air=1;
+		ground=1;
+	}
+	[groundflash]
+	{
+		flashSize = 128;   // flash size
+		flashAlpha = .7;    // initial alpha of the flash
+		circleGrowth = 0; // size increase/frame
+		circleAlpha = 0;   // initial alpha of the ring
+		ttl = 10;          // number of frames
+		color = .3,1,.3;    // color RGB
+	}
+}
+
+
+[JumpTrail] {
+	[smoke]
+	{
+		class=CSimpleParticleSystem;
+		[properties] {
+			sizegrowth=0;
+			sizemod=1;
+			pos=0,0,0;
+			emitVector=0,-1,0;
+			gravity=0, 0, 0;
+			Texture=boxlined;
+			colorMap=1 1 .6 .1   1 .4 0 .1   .8 0 0 .3   0 0 0 .6   0 0 0 0;
+			airdrag=.8;
+			particleLife=40;
+			particleLifeSpread=10;
+			numParticles=3;
+			particleSpeed=2;
+			particleSpeedSpread=4;
+			particleSize=4;
+			particleSizeSpread=6;
+			emitRot=0;
+			emitRotSpread=20;
+			directional=0;
+		}
+		air=1;
+		ground=1;
+		water=1;
+		count=1;
+	}
+	[groundflash]
+	{
+		flashSize = 80;   // flash size
+		flashAlpha = .6;    // initial alpha of the flash
+		circleGrowth = 0; // size increase/frame
+		circleAlpha = 0;   // initial alpha of the ring
+		ttl = 3;          // number of frames
+		color = 1,1,.2;    // color RGB
+	}
+}
+
+[JumpImpact] {
+	[smoke]
+	{
+		class=CSimpleParticleSystem;
+		[properties] {
+			sizegrowth=0;
+			sizemod=1;
+			pos=0,0,0;
+			emitVector=0,-1,0;
+			gravity=0, 0, 0;
+			Texture=boxlined;
+			colorMap=1 1 .6 .1   1 .4 0 .1   .8 0 0 .3   0 0 0 .6   0 0 0 0;
+			airdrag=.8;
+			particleLife=40;
+			particleLifeSpread=10;
+			numParticles=40;
+			particleSpeed=10;
+			particleSpeedSpread=8;
+			particleSize=4;
+			particleSizeSpread=6;
+			emitRot=80;
+			emitRotSpread=20;
+			directional=0;
+		}
+		air=1;
+		ground=1;
+		water=1;
+		count=1;
+	}
+	[groundflash]
+	{
+		flashSize = 80;   // flash size
+		flashAlpha = .6;    // initial alpha of the flash
+		circleGrowth = 0; // size increase/frame
+		circleAlpha = 0;   // initial alpha of the ring
+		ttl = 10;          // number of frames
+		color = 1,1,.2;    // color RGB
+	}
+}
+
+
+[FlashTrail] {
+	[smoke]
+	{
+		class=CSimpleParticleSystem;
+		[properties] {
+			sizegrowth=0;
+			sizemod=1;
+			pos=0,0,0;
+			emitVector=0,1,0;
+			gravity=0, 0, 0;
+			Texture=boxlined;
+			colorMap=0 0 1 .1   0 0 0 .6   0 0 0 0;
+			airdrag=1;
+			particleLife=10;
+			particleLifeSpread=10;
+			numParticles=3;
+			particleSpeed=.1;
+			particleSpeedSpread=.4;
+			particleSize=1;
+			particleSizeSpread=3;
+			emitRot=0;
+			emitRotSpread=90;
+			directional=0;
+		}
+		air=1;
+		ground=1;
+		water=1;
+		count=1;
+	}
+	[groundflash]
+	{
+		flashSize = 10;   // flash size
+		flashAlpha = .3;    // initial alpha of the flash
+		circleGrowth = 0; // size increase/frame
+		circleAlpha = 0;   // initial alpha of the ring
+		ttl = 3;          // number of frames
+		color = 0,0,1;    // color RGB
+	}
+}
+
+[FlashBlast] {
+	[smoke]
+	{
+		class=CSimpleParticleSystem;
+		[properties] {
+			sizegrowth=0;
+			sizemod=1;
+			pos=0,0,0;
+			emitVector=0,1,0;
+			gravity=0, 0, 0;
+			Texture=boxlined;
+			colorMap=0 0 1 .1   0 0 0 0;
+			airdrag=.9;
+			particleLife=5;
+			particleLifeSpread=5;
+			numParticles=40;
+			particleSpeed=3;
+			particleSpeedSpread=4;
+			particleSize=4;
+			particleSizeSpread=7;
+			emitRot=0;
+			emitRotSpread=90;
+			directional=0;
+		}
+		air=1;
+		ground=1;
+		water=1;
+		count=1;
+	}
+	[shockwave]
+	{
+		class = CBitmapMuzzleFlame;
+		[properties]
+		{
+			dir = 0,1,0.00001;
+			pos = 0, 5, 0;
+			colorMap=0 0 .2 .02   0 0 0 0;
+			size=32;
+			length=1;
+			sizeGrowth=2;
+			ttl=30;
+			frontOffset=0;
+			sideTexture=null;
+			frontTexture=shockwave;
+		}
+		water=1;
+		air=1;
+		ground=1;
+	}
+	[groundflash]
+	{
+		flashSize = 64;   // flash size
+		flashAlpha = .7;    // initial alpha of the flash
+		circleGrowth = 0; // size increase/frame
+		circleAlpha = 0;   // initial alpha of the ring
+		ttl = 10;          // number of frames
+		color = .3,.3,1;    // color RGB
+	}
+}
+
+
+
+[Burner] {
+	[smoke]
+	{
+		class=CSimpleParticleSystem;
+		[properties] {
+			sizegrowth=0;
+			sizemod=1;
+			pos=0,0,0;
+			emitVector=0,1,0;
+			gravity=0, 0, 0;
+			Texture=boxlined;
+			colorMap=1 1 .6 .1   1 .4 0 .1   .8 0 0 .3   0 0 0 .6   0 0 0 0;
+			airdrag=1;
+			particleLife=20;
+			particleLifeSpread=40;
+			numParticles=2;
+			particleSpeed=1;
+			particleSpeedSpread=2;
+			particleSize=3;
+			particleSizeSpread=3;
+			emitRot=0;
+			emitRotSpread=20;
+			directional=0;
+		}
+		air=1;
+		ground=1;
+		water=1;
+		count=1;
+	}
+	[groundflash]
+	{
+		flashSize = 96;   // flash size
+		flashAlpha = .1;    // initial alpha of the flash
+		circleGrowth = 0; // size increase/frame
+		circleAlpha = 0;   // initial alpha of the ring
+		ttl = 8;          // number of frames
+		color = 1,1,.2;    // color RGB
+	}
+}
+
+
+[DeathBlast] {
+	[shockwave1]
+	{
+		class = CBitmapMuzzleFlame;
+		[properties]
+		{
+			dir = 0,-1,0.00001;
+			pos = 0, 5, 0;
+			colorMap=1 .6 .2 1   .8 .2 0 1   0 0 0 1   0 0 0 1   0 0 0 .5   0 0 0 0;
+			size=20;
+			length=3;
+			sizeGrowth=1.5;
+			ttl=30;
+			frontOffset=1;
+			sideTexture=null;
+			frontTexture=circle;
+		}
+		water=1;
+		air=1;
+		ground=1;
+	}
+	[phase2]
+	{
+		class=CExpGenSpawner;
+		[properties]
+		{
+			delay=5;
+			dir=0,1,0;
+			damage=0;
+			explosionGenerator=custom:DeathBlastPhase2;
+			speed=0,0,0;
+			pos=0,0,0;
+		}
+		air=1;
+		ground=1;
+		water=1;
+		count=1;
+	}
+	[groundflash]
+	{
+		flashSize = 128;   // flash size
+		flashAlpha = 0;    // initial alpha of the flash
+		circleGrowth = 0; // size increase/frame
+		circleAlpha = 0;   // initial alpha of the ring
+		ttl = 10;          // number of frames
+		color = .3,1,.3;    // color RGB
+	}
+}
+
+[DeathBlastPhase2] {
+	[shockwave2]
+	{
+		class = CBitmapMuzzleFlame;
+		[properties]
+		{
+			dir = 0,1,0.00001;
+			pos = 0, 6 i.2, 0;
+			colorMap=1 1 1 1   1 .6 .2 1   .8 .2 0 1   0 0 0 0;
+			size=10 i-1;
+			length=i1;
+			sizeGrowth=3;
+			ttl=20 i5;
+			frontOffset=1;
+			sideTexture=null;
+			frontTexture=circle;
+		}
+		water=1;
+		air=1;
+		ground=1;
+		count=10;
+	}
+}
+
+
+[BaseDeathBlast] {
+	[shockwave1]
+	{
+		class = CBitmapMuzzleFlame;
+		[properties]
+		{
+			dir = 0,-1,0.00001;
+			pos = 0, 5, 0;
+			colorMap=1 .6 .2 1   .8 .2 0 1   0 0 0 1   0 0 0 1   0 0 0 .5   0 0 0 0;
+			size=80;
+			length=12;
+			sizeGrowth=1.5;
+			ttl=60;
+			frontOffset=1;
+			sideTexture=null;
+			frontTexture=circle;
+		}
+		water=1;
+		air=1;
+		ground=1;
+	}
+	[phase2]
+	{
+		class=CExpGenSpawner;
+		[properties]
+		{
+			delay=10;
+			dir=0,1,0;
+			damage=0;
+			explosionGenerator=custom:BaseDeathBlastPhase2;
+			speed=0,0,0;
+			pos=0,0,0;
+		}
+		air=1;
+		ground=1;
+		water=1;
+		count=1;
+	}
+	[groundflash]
+	{
+		flashSize = 128;   // flash size
+		flashAlpha = 0;    // initial alpha of the flash
+		circleGrowth = 0; // size increase/frame
+		circleAlpha = 0;   // initial alpha of the ring
+		ttl = 10;          // number of frames
+		color = .3,1,.3;    // color RGB
+	}
+}
+
+[BaseDeathBlastPhase2] {
+	[shockwave2]
+	{
+		class = CBitmapMuzzleFlame;
+		[properties]
+		{
+			dir = 0,1,0.00001;
+			pos = 0, 6 i.8, 0;
+			colorMap=1 1 1 1   1 .6 .2 1   .8 .2 0 1   0 0 0 0;
+			size=40 i-4;
+			length=i4;
+			sizeGrowth=3;
+			ttl=40 i10;
+			frontOffset=1;
+			sideTexture=null;
+			frontTexture=circle;
+		}
+		water=1;
+		air=1;
+		ground=1;
+		count=10;
+	}
+}
+

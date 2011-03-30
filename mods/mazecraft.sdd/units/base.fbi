@@ -1,0 +1,43 @@
+[UNITINFO]
+{
+	Name=Cubire Base;
+	Unitname=base;
+	Description=Base structure, receives reinforcements.;
+
+	// Required Tags
+	BuildCostMetal=100;
+	ShowNanoFrame=0;
+	icontype=base;
+	Category=BASE ARMORED TARGET;
+	FootprintX=5;
+	FootprintZ=7;
+	MaxSlope=255;
+	MaxDamage=20000;
+	ObjectName=proto_base.s3o;
+	SoundCategory=COMPUTER;
+	Commander=1;
+
+	// Movement
+	CanMove=0;
+
+	// Airplane Moventment
+
+	// Buildings
+	yardmap=ooooo ooooo yyyyy yyyyy yyyyy yyyyy yyyyy;
+
+	// Construction
+
+	// Resources
+
+	// Abilities
+	CanStop=1;
+
+	// Sight/Radar
+	RadarDistance=0;
+	SightDistance=800;
+
+	// Weapons
+	ExplodeAs=BaseDeath;
+	SelfDestructAs=BaseDeath;
+
+}

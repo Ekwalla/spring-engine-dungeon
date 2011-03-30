@@ -1,0 +1,16 @@
+#include "grunt.bos"
+
+static-var jumping;
+
+JumpStart() {
+	jumping=1;
+	while(jumping) {
+		emit-sfx 1024 from base;
+		sleep 60;
+	}
+}
+
+JumpEnd() {
+	jumping=0;
+	emit-sfx 1025 from base;
+}

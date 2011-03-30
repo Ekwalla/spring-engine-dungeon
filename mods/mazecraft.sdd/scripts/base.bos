@@ -1,0 +1,14 @@
+piece base, body;
+
+Create() {
+	sleep 30;
+}
+
+HitByWeaponId(z,x,id,d) {
+	if (id==2) { //grenade
+		return 100;
+	}
+	else {
+		return 5;
+	}
+}

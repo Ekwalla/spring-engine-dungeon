@@ -1,0 +1,19 @@
+[CLASS0]
+	{
+	Name=STANDARD;
+	MaxWaterDepth=12;
+	MaxSlope=36;
+	CrushStrength=40;
+	FootprintX=2;
+	FootprintZ=2;
+	}
+[CLASS1]
+	{
+	Name=LARGE;
+	MaxWaterDepth=12;
+	MaxSlope=36;
+	CrushStrength=40;
+	FootprintX=3;
+	FootprintZ=3;
+	}
+
