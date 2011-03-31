@@ -85,13 +85,6 @@ for name, ud in pairs(UnitDefs) do
   end
 end 
 
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
---
--- Modular commander handling
---
-
-VFS.Include('gamedata/modularcomms/unitdefgen.lua')
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -132,59 +125,6 @@ local function TagTree(unit, faction, newbuildoptions)
   Tag(unit)
 end
 
-local commanders = {
-	"armcom1",
-	"armcom2",
-	"armcom3",
-	"armcom4",
-
-	"corcom1",
-	"corcom2",
-	"corcom3",
-	"corcom4",
-
-	"commrecon1",
-	"commrecon2",
-	"commrecon3",
-	"commrecon4",
-
-	"commsupport1",
-	"commsupport2",
-	"commsupport3",
-	"commsupport4",
-}
-
---add procedural comms
-for name in pairs(commDefs) do
-	commanders[#commanders + 1] = name
-end
-
-for _,name in pairs(commanders) do
-	TagTree(name, "arm", UnitDefs["armcom1"].buildoptions)
-end
-
-for name, ud in pairs(UnitDefs) do
-	--Spring.Echo(name, ud.faction)
-    --if ud.faction ~= "THUNDERBIRDS" then ud.faction = "arm" end
-	if not name:find("chicken") then
-		ud.faction = "arm"
-	else
-		ud.faction = "chicken"
-	end
-end 
-
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
--- 3dbuildrange for all none plane builders
---
---[[
-for name, ud in pairs(UnitDefs) do
-  if (tobool(ud.builder) and not tobool(ud.canfly)) then
-    ud.buildrange3d = true
-  end
-end
---]]
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
