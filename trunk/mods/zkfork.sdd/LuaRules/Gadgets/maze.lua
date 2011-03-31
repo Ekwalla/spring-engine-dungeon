@@ -10,7 +10,16 @@ function gadget:GetInfo()
   }
 end
 
+--[[
 
+	To make a maze type:
+	
+		/luarules maze <size> <depth> <min corridor width>
+		
+	size - height and widthd
+	depth - how many times it's split in half
+	min corridor width - minimum width of corridors
+--]]
 
 local echo 			= Spring.Echo
 
@@ -109,31 +118,38 @@ function gadget:RecvLuaMsg(msg, playerID)
 	local cmd = msg[1]
 	local param1 = msg[2]
 	local param2 = msg[3]
+	local param3 = msg[4]
 	
 	
 	if cmd == 'maze' then
 		local width, height = 21, 21
 		if param1 then
 			param1=param1+0
-			width, height = param1, param1 
+			width, height = param1, param1
+		else
+			return
 		end
 	
 		if TESTMODE then echo '-- CALLING MAZE CODE --'; end
 		--local mazemaster = MazeMasterRecBack( width, height )
 		--local mazemaster = MazeMasterHuntKill( width, height )
-		local depth = 4
-		if param2 then
-			depth = param2+0
-		end
-		local mazemaster = MazeMasterRecDiv( width, height, depth )
+		
+		local mazemaster = MazeMasterRecDiv( width, height )
+		
+		if not mazemaster then return end
 		
 		--mazemaster:SetSize(30,5)
-		
-		
+		if param2 then
+			mazemaster:SetDepth(param2+0)
+		end
+		if param3 then
+			mazemaster:SetMinCorridor(param3+0)
+		end
 		mazemaster:GenerateMaze()
 		mazemaster:MakeEntrance()
 		
-		if TESTMODE	then echo (  mazemaster ); end
+		
+		if TESTMODE	then echo ( mazemaster ); end
 		
 		PlaceMazeBlocks(mazemaster:GetGrid())
 		
@@ -169,7 +185,8 @@ local function DoMaze(cmd, line, words, playerID)
 	--echo ('test', cmd, line, words, words[1] )
 	local cmdline = cmd
 	if words[1] then
-		cmdline = cmdline ..'|'.. words[1] ..'|'.. words[2] 
+		--cmdline = cmdline ..'|'.. words[1] ..'|'.. words[2] 
+		cmdline = cmdline ..'|'.. table.concat( words, '|' )
 	end
 	
 	Spring.SendLuaRulesMsg(cmdline)
