@@ -266,6 +266,7 @@ do
 	
     MazeMasterCarver = function(...)
         local self = MazeMaster(...)
+		if not self then return false end
         
         self.cgrid = {}
         self.cheight = (self.height - 1) / 2
@@ -390,7 +391,8 @@ do
 	
     MazeMasterWallAdder = function(...)
         local self = MazeMaster(...)
-        
+        if not self then return false end
+		
         self.cgrid = {}
         self.cheight = (self.height - 1) / 2
         self.cwidth = (self.width - 1) / 2
@@ -452,7 +454,8 @@ do
     
     MazeMasterRecBack = function(...)
         local self = MazeMasterCarver(...)
-        
+        if not self then return false end
+		
         --todo, make this nicer
 		self.CarveMaze = CarveMaze --override
         
@@ -568,7 +571,8 @@ do
     
     MazeMasterHuntKill = function(...)
         local self = MazeMasterCarver(...)
-        
+        if not self then return false end
+		
         --todo, make this nicer
 		self.CarveMaze = CarveMaze --override
         
@@ -676,7 +680,8 @@ do
     
     MazeMasterRecDiv = function(...)
         local self = MazeMasterWallAdder(...)
-        
+        if not self then return false end
+		
         --todo, make this nicer
 		self.DrawMaze = DrawMaze --override
 		self.SetMinCorridor = SetMinCorridor
