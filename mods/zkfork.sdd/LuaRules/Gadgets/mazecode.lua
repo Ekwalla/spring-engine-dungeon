@@ -93,7 +93,7 @@ do
             or width % 2 ~= 1
             then
             echo "<MazeMaster> ERROR! Height and width must be odd numbers greater than 4."
-            return {}
+            return false
         end
         
         local self =
@@ -592,8 +592,15 @@ do
 		
 	end
 	
+	local function SetMinCorridor(self, val)
+		self.minCorridor = val
+	end
+	local function SetDepth(self, val)
+		self.depth = val
+	end
+	
 	local function divide(self, x, y, width, height, orientation, depth)
-		local minCorridor = 2
+		local minCorridor = self.minCorridor+0
 	
 		if width < 2+minCorridor  or height < 2+minCorridor  then return end
 		
@@ -662,17 +669,21 @@ do
 	end
 	
     local function DrawMaze(self)
-		divide(self, 1,1, self.cwidth, self.cheight, choose_orientation(self.cwidth, self.cheight), 0)
+		divide(self, 1,1, self.cwidth, self.cheight, choose_orientation(self.cwidth, self.cheight), 1)
     end
     
     
     
-    MazeMasterRecDiv = function(width, height, depth)
-        local self = MazeMasterWallAdder(width, height)
+    MazeMasterRecDiv = function(...)
+        local self = MazeMasterWallAdder(...)
         
         --todo, make this nicer
-		self.depth = depth
 		self.DrawMaze = DrawMaze --override
+		self.SetMinCorridor = SetMinCorridor
+		self.SetDepth = SetDepth
+		
+		self.depth = 999
+		self.minCorridor = 0
         
         return self
     end--constr
