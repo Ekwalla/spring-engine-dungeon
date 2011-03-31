@@ -1,8 +1,8 @@
 
 return {
-  name='Zero-K $VERSION',
-  description='Zero-K',
-  shortname='ZK',
+  name='MazeCraft $VERSION',
+  description='MazeCraft',
+  shortname='MC',
   version='$VERSION',
   mutator='1',
   game='',
@@ -10,8 +10,5 @@ return {
   modtype=1,
   depend = {
     'Spring content v1',
-  },
-  NTAI = {
-    tdfpath='ZK';
   },
 }
