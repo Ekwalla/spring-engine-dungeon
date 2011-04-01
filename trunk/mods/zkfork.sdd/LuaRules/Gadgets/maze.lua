@@ -185,7 +185,6 @@ local function DoMaze(cmd, line, words, playerID)
 	--echo ('test', cmd, line, words, words[1] )
 	local cmdline = cmd
 	if words[1] then
-		--cmdline = cmdline ..'|'.. words[1] ..'|'.. words[2] 
 		cmdline = cmdline ..'|'.. table.concat( words, '|' )
 	end
 	
