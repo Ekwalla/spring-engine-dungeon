@@ -6,9 +6,9 @@ Players will be able to build Resistance via gaining experience or through the u
 
 ===list of damage types===
 
-Kinetic
-Energy
-Fire
-Cold
-Chemical
-Concussion
+[Kinetic]
+[Energy]
+[Fire]
+[Cold]
+[Chemical]
+[Concussion]
