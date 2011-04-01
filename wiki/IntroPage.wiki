@@ -4,7 +4,7 @@
 
 Blam! its the main mazecraft wiki page! i will use it to organize game rules and content information.
 
-= Details =
+== Game Information ==
 
 table of contents will go here when it exists ^^
 
