@@ -1,0 +1,9 @@
+#summary main page of mazecraft project discussion wiki
+
+= Introduction =
+
+Blam! its the main mazecraft wiki page! i will use it to organize game rules and content information.
+
+= Details =
+
+table of contents will go here when it exists ^^
