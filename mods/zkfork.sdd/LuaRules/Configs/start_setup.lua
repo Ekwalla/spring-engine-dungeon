@@ -38,7 +38,7 @@ OVERDRIVE_BUFFER=10000
 BASE_COMM_COST = 1600
 
 EXCLUDED_UNITS = {
-  [ UnitDefNames['terraunit'].id ] = true,
+  --[ UnitDefNames['terraunit'].id ] = true,
 }
 
 DEFAULT_UNIT = "armcom1"		--FIXME: hardcodey until I cba to identify precise source of problem
