@@ -9,3 +9,4 @@ Blam! its the main mazecraft wiki page! i will use it to organize game rules and
 table of contents will go here when it exists ^^
 
 ItemList
+DamageTypes
