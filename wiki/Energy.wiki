@@ -1,0 +1,3 @@
+#summary Energy Damage Information
+
+Energy Damage is dealt by electrical sources
