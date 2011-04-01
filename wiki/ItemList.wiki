@@ -1,0 +1,27 @@
+#summary Items List
+
+== Items List ==
+
+all available "pickup" items in mazecraft
+
+just placeholders for now
+
+Armour
+
+|| Item Name || Item Class || Details ||
+|| Pantaloons of Escaping || Greaves || + 2 to Agility ||
+
+Weapons
+
+|| Item Name || Item Class || Details || Damage Type || Cooldown ||
+|| Rifle || Ranged ||. || Piercing  ||... ||
+
+Inventory One-Use
+
+|| Item Name || Item Class || Details ||
+|| Health Potion || etc || etc ||
+
+Inventory Use-Forever
+
+|| Item Name || Item Class || Details || Cooldown ||
+|| Medical Kit || etc || etc || etc ||
