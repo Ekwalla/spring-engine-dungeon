@@ -8,34 +8,35 @@ just placeholders for now
 
 ===Armour===
 
-|| Item Name || Item Class || Details ||
-|| Pantaloons of Escaping || Greaves || + 2 to Agility ||
+|| Item Name || Item Class || Main Stats Bonus || Resistance Bonus ||
+|| Pantaloons of Escaping || Greaves || + 2 Agility || + 1 Cold Resist||
 
 ===Ranged Weapons===
 
 || Item Name || Item Class || Details || Damage Type || Cooldown ||
-|| submachinegun || Ranged ||. || Piercing  ||... ||
-|| combat shotgun || Ranged ||. || Piercing  ||... ||
-|| slug pistol || Ranged ||. || Piercing  ||... ||
-|| laser rifle || Ranged ||. || Piercing  ||... ||
-|| plasma rifle || Ranged ||. || Piercing  ||... ||
-|| sniper rifle || Ranged ||. || Piercing  ||... ||
-|| minigun || Ranged ||. || Piercing  ||... ||
-|| flamethrower|| Ranged ||. || Piercing  ||... ||
-|| crossbow || Ranged ||. || Piercing  ||... ||
-|| flak cannon|| Ranged ||. || Piercing  ||... ||
+|| submachinegun || Ranged ||. || Kinetic ||... ||
+|| combat shotgun || Ranged ||. || Concussion ||... ||
+|| slug pistol || Ranged ||. || Concussion ||... ||
+|| laser rifle || Ranged ||. || Kinetic ||... ||
+|| plasma rifle || Ranged ||. || Kinetic ||... ||
+|| sniper rifle || Ranged ||. || Concussion ||... ||
+|| minigun || Ranged ||. || Kinetic ||... ||
+|| flamethrower|| Ranged ||. || Heat ||... ||
+|| crossbow || Ranged ||. || Kinetic ||... ||
+|| flak cannon|| Ranged ||. || Kinetic ||... ||
 
 ===Melee Weapons===
 
 || Item Name || Item Class || Details || Damage Type || Cooldown ||
 || sword || Melee ||. || Piercing  ||... ||
 || axe || Melee ||. || Piercing  ||... ||
-|| warhammer || Melee ||. || blunt ||... ||
-|| staff || Melee ||. || blunt ||... ||
+|| warhammer || Melee ||. || Concussion ||... ||
+|| staff || Melee ||. || Concussion ||... ||
 
 
 ===Magic Weapons===
 
+coming soon :P
 
 ===Inventory One-Use===
 
