@@ -1,0 +1,14 @@
+#summary Summary of Damage Types
+
+mazecraft will use six damage types for both defensive and offensive purposes.
+
+Players will be able to build Resistance via gaining experience or through the use of items and armor.
+
+===list of damage types===
+
+|| Kinetic ||
+|| Energy ||
+|| Fire ||
+|| Cold ||
+|| Chemical ||
+|| Concussion ||
