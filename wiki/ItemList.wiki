@@ -24,7 +24,7 @@ just placeholders for now
 || flamethrower|| Ranged ||. || Heat ||... ||
 || crossbow || Ranged ||. || Kinetic / Concussion  ||... ||
 || flak cannon|| Ranged ||. || Kinetic ||... ||
--- can we have mixed damage types?
+`can we have mixed damage types?`
 
 ===Melee Weapons===
 
