@@ -1,0 +1,6 @@
+#summary Breakdown of the NPC monsters that appear in mazecraft
+
+== List of Creeps ==
+
+|| Name || Type || Offense || Defense ||
+|| Crawling Pie || Pastry || Delicious Filling || Golden Brown Crust ||
