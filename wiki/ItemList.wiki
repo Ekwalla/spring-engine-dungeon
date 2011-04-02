@@ -17,13 +17,14 @@ just placeholders for now
 || submachinegun || Ranged ||. || Kinetic ||... ||
 || combat shotgun || Ranged ||. || Concussion ||... ||
 || slug pistol || Ranged ||. || Concussion ||... ||
-|| laser rifle || Ranged ||. || Kinetic ||... ||
-|| plasma rifle || Ranged ||. || Kinetic ||... ||
-|| sniper rifle || Ranged ||. || Concussion ||... ||
+|| laser rifle || Ranged ||. || Energy / Heat ||... ||
+|| plasma rifle || Ranged ||. || Energy / Heat ||... ||
+|| sniper rifle || Ranged ||. || Kinetic / Concussion ||... ||
 || minigun || Ranged ||. || Kinetic ||... ||
 || flamethrower|| Ranged ||. || Heat ||... ||
-|| crossbow || Ranged ||. || Kinetic ||... ||
+|| crossbow || Ranged ||. || Kinetic / Concussion  ||... ||
 || flak cannon|| Ranged ||. || Kinetic ||... ||
+-- can we have mixed damage types?
 
 ===Melee Weapons===
 
