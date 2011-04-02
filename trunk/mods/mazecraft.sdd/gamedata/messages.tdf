@@ -1,8 +1,0 @@
-[messages]
-{
-	[Team%i(%s) is no more]
-	{
-		tr1=Team%i(%s) lost;
-	}
-}
-
