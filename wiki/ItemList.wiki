@@ -23,11 +23,12 @@ just placeholders for now
 || sniper rifle || Ranged ||. || Kinetic / Concussion ||... ||
 || minigun || Ranged ||. || Kinetic ||... ||
 || flamethrower|| Ranged ||. || Heat ||... ||
-|| crossbow || Ranged ||. || Kinetic / Various War Head||... ||
-|| grenade launcher|| Ranged ||. || Kinetic / Various War Head||... ||
+|| crossbow || Ranged || mini grenades, which are less powerful than hand grenades || Kinetic / Various War Head||... ||
+|| grenade launcher|| Ranged ||. || Concussion / Various War Head||... ||
 || needle gun|| Ranged ||. || Chemical ||... ||
 || flak cannon|| Ranged ||. || Kinetic ||... ||
 || rail gun|| Ranged ||. || Kinetic ||... ||
+|| rocket launcher|| Ranged || mini rockets compared to large one shot missile launcher || Concussion ||... ||
 || auto cannon || Ranged ||. || Kinetic ||... ||
 || beam cannon || Ranged ||. || Energy / Heat||... ||
 || Lightning cannon || Ranged ||. || Energy ||... ||
@@ -45,6 +46,12 @@ Can we have mixed damage types?
 || staff || Melee ||. || Concussion ||... ||
 || chainsaw|| Melee ||. || Kinetic ||... ||
 || crowbar|| Melee ||. || Kinetic ||... ||
+|| power gaunlets || Melee ||. || Kinetic/ Energy ||... ||
+|| plasma blade || Melee ||. || Energy/ Heat||... ||
+|| energy sword || Melee || . || Energy/ Heat||... ||
+|| gravity hammer|| Melee ||. || Energy||... ||
+|| knuckle-sandwhich || Melee || explosive knuckles || Concussion / Heat ||... ||
+
 
 
 ===Magic Weapons===
@@ -55,12 +62,28 @@ coming soon :P
 
 || Item Name || Item Class || Details ||
 || Health Potion || etc || etc ||
+|| Mana Potion || etc || etc ||
+|| Magic Potion || etc || various ||
 || Missile Launcher || etc || etc ||
 || Grenade || etc || etc ||
 || Claymore || etc || etc ||
+|| Prox mine || etc || etc ||
+|| Energy Barrier || etc || etc ||
+
 
 ===Inventory Use-Forever===
 
 || Item Name || Item Class || Details || Cooldown ||
 || Medical Kit || etc || etc || etc ||
+|| Cloak System || etc || etc || etc ||
+|| Energy Shield || etc || etc || etc ||
+|| Laser Welder || etc || lock/ unlock doors|| etc ||
+
+
+===Stationary Systems===
+|| Item Name || Item Class || Details || Cooldown ||
 || Mortar || etc || etc || long XD ||
+|| Rocket Launcher || etc || multi shot || long XD ||
+|| Energy Beam Director|| etc || etc || dont walk into the beam! ||
+|| Catapult || etc || etc || etc ||
+|| Warpgate || etc || etc || etc ||
