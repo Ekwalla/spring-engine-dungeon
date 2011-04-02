@@ -16,23 +16,35 @@ just placeholders for now
 || Item Name || Item Class || Details || Damage Type || Cooldown ||
 || submachinegun || Ranged ||. || Kinetic ||... ||
 || combat shotgun || Ranged ||. || Concussion ||... ||
-|| slug pistol || Ranged ||. || Concussion ||... ||
+|| slug pistol || Ranged ||. || Kinetic / Various War Head ||... ||
+|| assault rifle || Ranged ||. || Kinetic ||... ||
 || laser rifle || Ranged ||. || Energy / Heat ||... ||
 || plasma rifle || Ranged ||. || Energy / Heat ||... ||
 || sniper rifle || Ranged ||. || Kinetic / Concussion ||... ||
 || minigun || Ranged ||. || Kinetic ||... ||
 || flamethrower|| Ranged ||. || Heat ||... ||
-|| crossbow || Ranged ||. || Kinetic / Concussion  ||... ||
+|| crossbow || Ranged ||. || Kinetic / Various War Head||... ||
+|| grenade launcher|| Ranged ||. || Kinetic / Various War Head||... ||
+|| needle gun|| Ranged ||. || Chemical ||... ||
 || flak cannon|| Ranged ||. || Kinetic ||... ||
-can we have mixed damage types?
+|| rail gun|| Ranged ||. || Kinetic ||... ||
+|| auto cannon || Ranged ||. || Kinetic ||... ||
+|| beam cannon || Ranged ||. || Energy / Heat||... ||
+|| Lightning cannon || Ranged ||. || Energy ||... ||
+|| Wave cannon || Ranged ||. || Energy / Cold||... ||
+|| Implosion Cannon|| Ranged ||. || Energy / Cold / Concussion ||... ||
+===Note===
+Can we have mixed damage types?
 
 ===Melee Weapons===
 
 || Item Name || Item Class || Details || Damage Type || Cooldown ||
-|| sword || Melee ||. || Piercing  ||... ||
-|| axe || Melee ||. || Piercing  ||... ||
+|| sword || Melee ||. || Kinetic ||... ||
+|| axe || Melee ||. || Kinetic/ Concussion  ||... ||
 || warhammer || Melee ||. || Concussion ||... ||
 || staff || Melee ||. || Concussion ||... ||
+|| chainsaw|| Melee ||. || Kinetic ||... ||
+|| crowbar|| Melee ||. || Kinetic ||... ||
 
 
 ===Magic Weapons===
@@ -43,7 +55,7 @@ coming soon :P
 
 || Item Name || Item Class || Details ||
 || Health Potion || etc || etc ||
-|| AntiTank RPG || etc || etc ||
+|| Missile Launcher || etc || etc ||
 || Grenade || etc || etc ||
 || Claymore || etc || etc ||
 
