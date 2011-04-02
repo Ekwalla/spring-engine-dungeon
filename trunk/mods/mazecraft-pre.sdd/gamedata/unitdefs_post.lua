@@ -1,6 +1,7 @@
--- $Id: unitdefs_post.lua 4656 2009-05-23 23:41:24Z carrepairer $
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+
+local echo = Spring.Echo
 
 local modOptions
 if (Spring.GetModOptions) then
@@ -173,99 +174,8 @@ if (modOptions and tobool(modOptions.specialair)) then
 end
 --]]
 
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
--- Tactics GameMode
---
-
-if (modOptions and (modOptions.zkmode == "tactics")) then
-  -- remove all build options
-  Game = { gameSpeed = 30 };  --  required by tactics.lua
-  local options = VFS.Include("LuaRules/Configs/tactics.lua")
-  local customBuilds = options.customBuilds
-  for name, ud in pairs(UnitDefs) do
-    if tobool(ud.commander) then
-      ud.buildoptions = (customBuilds[name] or {}).allow or {}
-    else
-      ud.buildoptions = {}
-    end
-  end
-end
 
 
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
--- Metal and Energy Bonus
---
-
-if (modOptions and modOptions.metalmult) then
-  for name in pairs(UnitDefs) do
-    local em = UnitDefs[name].extractsmetal
-    if (em) then
-      UnitDefs[name].extractsmetal = em * modOptions.metalmult
-    end
-  end
-end
-
-if (modOptions and modOptions.energymult) then
-  for name in pairs(UnitDefs) do
-    local em = UnitDefs[name].energymake
-    if (em) then
-      UnitDefs[name].energymake = em * modOptions.energymult
-    end
-	-- for solars
-	em = (UnitDefs[name].energyuse and UnitDefs[name].energyuse < 0) and UnitDefs[name].energyuse
-	if (em) then
-      UnitDefs[name].energyuse = em * modOptions.energymult
-    end
-  end
-end
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
--- OD mex divide by 20
---
-
-for _,ud in pairs(UnitDefs) do
-    local em = tonumber(ud.extractsmetal)
-    if (em) then
-		ud.extractsmetal = em * 0.05
-    end
-end
-
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
--- unitspeedmult
---
-
-if (modOptions and modOptions.unitspeedmult and modOptions.unitspeedmult ~= 1) then
-  local unitspeedmult = modOptions.unitspeedmult
-  for unitDefID, unitDef in pairs(UnitDefs) do
-    if (unitDef.maxvelocity) then unitDef.maxvelocity = unitDef.maxvelocity * unitspeedmult end
-    if (unitDef.acceleration) then unitDef.acceleration = unitDef.acceleration * unitspeedmult end
-    if (unitDef.brakerate) then unitDef.brakerate = unitDef.brakerate * unitspeedmult end
-    if (unitDef.turnrate) then unitDef.turnrate = unitDef.turnrate * unitspeedmult end
-  end
-end
-
-if (modOptions and modOptions.damagemult and modOptions.damagemult ~= 1) then
-  local damagemult = modOptions.damagemult
-  for _, unitDef in pairs(UnitDefs) do
-    if (unitDef.autoheal) then unitDef.autoheal = unitDef.autoheal * damagemult end
-    if (unitDef.idleautoheal) then unitDef.idleautoheal = unitDef.idleautoheal * damagemult end
-    
-    if (unitDef.capturespeed) 
-      then unitDef.capturespeed = unitDef.capturespeed * damagemult
-      elseif (unitDef.workertime) then unitDef.capturespeed = unitDef.workertime * damagemult
-    end
-    
-    if (unitDef.repairspeed) 
-      then unitDef.repairspeed = unitDef.repairspeed * damagemult
-      elseif (unitDef.workertime) then unitDef.repairspeed = unitDef.workertime * damagemult
-    end
-  end
-end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -282,19 +192,6 @@ end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
--- 3x repair speed than BP
---
-
-for name, unitDef in pairs(UnitDefs) do
-	if (unitDef.repairspeed) then
-		unitDef.repairspeed = unitDef.repairspeed * 3
-	elseif (unitDef.workertime) then 
-		unitDef.repairspeed = unitDef.workertime * 3
-    end
-end
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
 -- Lasercannons going through units fix
 -- 
 
@@ -302,30 +199,6 @@ for name, ud in pairs(UnitDefs) do
   ud.collisionVolumeTest = 1
 end
 
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
--- Burrowed
--- 
-for name, ud in pairs(UnitDefs) do
-  if (ud.weapondefs) then
-    for wName,wDef in pairs(ud.weapondefs) do      
-      wDef.damage.burrowed = 0.001
-    end
-  end
-end --for
-
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
--- Cost Checking
--- 
---[[
-for name, ud in pairs(UnitDefs) do
-	if ud.buildcostmetal ~= ud.buildcostenergy or ud.buildtime ~= ud.buildcostenergy then
-		Spring.Echo("Inconsistent Cost for " .. ud.name)
-	end
-end
---]]
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -358,53 +231,6 @@ end
 --  ud.reclaimable = false
 --end
 
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
--- Festive units mod option (CarRepairer's WIP)
--- 
-
-if (modOptions and tobool(modOptions.xmas)) then
-  local gifts = {"present_bomb1.s3o","present_bomb2.s3o","present_bomb3.s3o"}
-
-  local function round(num)
-    return num-(num%1)
-  end
-
-  local function GetRandom(s,c)
-    local n = 0
-    for i=1,s:len() do
-      n = n + s:byte(i)
-    end
-    n = (math.sin(n)+1)*0.5*(c-1)+1
-    return round(n)
-  end
-
-  for name, ud in pairs(UnitDefs) do
-	if (type(ud.weapondefs) == "table") then
-      for wname,wd in pairs(ud.weapondefs) do
-        if (wd.weapontype == "AircraftBomb" or ( wd.name:lower() ):find("bomb")) and not wname:find("bogus") then
-		  --Spring.Echo(wname)
-          wd.model = gifts[ GetRandom(wname,#gifts) ]
-        end
-      end
-    end
-
-  end --for
-end
-
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
--- Special Power plants
--- 
-if (modOptions and not tobool(modOptions.specialpower)) then
-	for name, ud in pairs(UnitDefs) do
-		if name == 'cafus' or name == 'aafus' then
-			ud.explodeas 		= "NUCLEAR_MISSILE"
-			ud.selfdestructas 	= "NUCLEAR_MISSILE"
-		end
-	end
-end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -420,26 +246,87 @@ if (modOptions and tobool(modOptions.specialdecloak)) then
 	end
 end
 
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
--- Remove Restore
--- 
+
+
+
+-------------------------------------
+------ UNIT SETUP ---------------
+-------------------------------------
+
 
 for name, ud in pairs(UnitDefs) do
-  if tobool(ud.builder) then
-	ud.canRestore = false
-  end
-end
+	
+	echo ("UD", name)
+	
+	-- *** Buildings ***
+	if not ud.maxSlope then ud.maxSlope = 255 end
+	
+	--- Build time
+	local ignore = { ramp=1, }
+	if not ignore[name] then
+		if ud.buildcostmetal then
+			ud.buildtime 		= ud.buildcostmetal
+			ud.buildcostenergy 	= ud.buildcostmetal
+		elseif ud.buildcostenergy then
+			ud.buildtime 		= ud.buildcostenergy
+		end
+	end
+	
+	--- Corpses
+	local ignore = { chicken=1, }
+	if not ignore[name]	and ud.featuredefs and ud.featuredefs.dead then
+		
+		ud.corpse = 'dead'
+		if not ud.featuredefs.dead.description then
+			ud.featuredefs.dead.description = "Dead " .. ud.name
+		end
+	
+		ud.featuredefs.dead.footprintx = ud.footprintx
+		ud.featuredefs.dead.footprintz = ud.footprintz
+		
+		if ud.featuredefs.dead.blocking == nil and ud.footprintx < 2 then
+			ud.featuredefs.dead.blocking = false
+		end
 
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
--- Set chicken cost
--- 
-
-for name, ud in pairs(UnitDefs) do
-  if (ud.unitname:sub(1,7) == "chicken") then
-	--ud.buildcostmetal = ud.buildtime
-	--ud.buildcostenergy = ud.buildtime
-  end
+		ud.featuredefs.dead.metal = ud.buildcostmetal
+		ud.featuredefs.dead.energy = ud.buildcostenergy
+		
+		ud.featuredefs.dead.reclaimTime = ud.buildtime
+		
+		if not ud.featuredefs.dead.object then
+			--echo ('corpse', name)
+			if ud.isfeature then
+				ud.featuredefs.dead.object = ud.objectname
+			else
+				ud.featuredefs.dead.object = ud.unitname .. '_dead.s3o' 
+			end
+		end
+		
+		if not ud.featuredefs.dead.damage then
+			ud.featuredefs.dead.damage = ud.maxdamage * 2
+		end
+	end
+	
+	
+	-- Misc
+	ud.shownanoframe = false
+	
+	if not ud.nochasecategory then 	ud.nochasecategory = ''					end
+	if not ud.maxwaterdepth then 	ud.maxwaterdepth = ud.footprintx * 10 	end
+	if not ud.sightdistance then 	ud.sightdistance = 400					end
+	if not ud.idleautoheal then 	ud.idleautoheal = 0 					end
+	if not ud.objectname then 		ud.objectname = ud.unitname .. '.s3o' 	end
+	if not ud.maxslope then 		ud.maxslope = 255						end
+	ud.nochasecategory				= ud.nochasecategory .. ' NOTARGET'
+	
+	if not ud.script then
+		local ignore = { 
+			armsolar=1,
+			testunit=1,
+		}
+		if not ignore[name]	then
+			ud.script = ud.unitname .. '.lua' 
+		end
+	end
+	
 end

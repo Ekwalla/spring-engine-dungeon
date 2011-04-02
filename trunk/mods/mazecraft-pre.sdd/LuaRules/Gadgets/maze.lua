@@ -16,9 +16,10 @@ end
 	
 		/luarules maze <size> <depth> <min corridor width>
 		
-	size - height and widthd
+	size - height and width (must be odd number, greater than 5)
 	depth - how many times it's split in half
 	min corridor width - minimum width of corridors
+	example: /luarules maze 51 7 4
 --]]
 
 local echo 			= Spring.Echo
@@ -46,8 +47,8 @@ local destroyUnit 	= {}
 local mapWidth 		= math.floor(Game.mapSizeX)
 local mapHeight 	= math.floor(Game.mapSizeZ)
 
-local mazeBlock		= 'armsolar'
-local mazeDoor		= 'armsolar'
+local mazeBlock		= 'block'
+local mazeDoor		= 'door'
 
 local function PlaceMazeBlocks(mazegrid)
 	local blockStr = 'X'
@@ -68,7 +69,7 @@ local function PlaceMazeBlocks(mazegrid)
 	for x= 1, w do
 		for y= 1, h do
 			if mazegrid[x][y] == blockStr
-				--or mazegrid[x][y] == doorStr
+				or mazegrid[x][y] == doorStr
 				then
 				
 				local px = origx+x*size 
@@ -90,7 +91,7 @@ local function KillMazeBlocks()
 	for _, unitID in ipairs(allUnits) do
 		local udid = Spring.GetUnitDefID(unitID)
 		local ud = UnitDefs[udid]
-		if ud and ud.name == mazeBlock then
+		if ud and (ud.name == mazeBlock or ud.name == mazeDoor )then
 			destroyUnit[#destroyUnit+1] = {unitID, false, true}
 		end
 	end
@@ -147,6 +148,7 @@ function gadget:RecvLuaMsg(msg, playerID)
 		end
 		mazemaster:GenerateMaze()
 		mazemaster:MakeEntrance()
+		mazemaster:MakeExit()
 		
 		
 		if TESTMODE	then echo ( mazemaster ); end
