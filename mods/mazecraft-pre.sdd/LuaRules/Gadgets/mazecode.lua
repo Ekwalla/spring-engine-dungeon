@@ -82,8 +82,14 @@ do
 	local function MakeEntrance(self, x,y)
 		if not x then x = 2 end
 		if not y then y = 1 end
-		self.grid[x][y] = self.sStr
+		self.grid[x][y] = self.dStr
 	end
+	local function MakeExit(self, x,y)
+		if not x then x = self.width-1 end
+		if not y then y = self.height end
+		self.grid[x][y] = self.dStr
+	end
+	
 	
     MazeMaster = function(height, width)
         if
@@ -105,6 +111,7 @@ do
             __tostring      = __tostring,
             GenerateMaze   	= GenerateMaze,
             MakeEntrance   	= MakeEntrance,
+            MakeExit  	 	= MakeExit,
             GetGrid   		= GetGrid,
             
             --feeble underscore of false protection
