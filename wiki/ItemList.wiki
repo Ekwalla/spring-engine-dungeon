@@ -4,12 +4,31 @@
 
 all available "pickup" items in mazecraft
 
-just placeholders for now
-
 ===Armour===
 
-|| Item Name || Item Class || Main Stats Bonus || Resistance Bonus ||
-|| Pantaloons of Escaping || Greaves || + 2 Agility || + 1 Cold Resist||
+some armour will be created in "set" form
+
+|| Item Name || Item Class || Main Stats Bonus || Resistance Bonus || Description ||
+|| Fatigues || Suit || -- || -encumberment || army suit with pockets||
+|| Cloth || Suit || -- || Concussion || padded suit to absorb blows ||
+|| Cloth and Plate || Suit || -- || Concussion + Kinetic || padded suit with plate inserts ||
+|| Kevlar || Suit || -- || Kinetic || -- ||
+|| Alloy || Suit || -- || -- || -- ||
+|| Protective Gear || Suit || -- || -- || items rated to protect against chemical, heat, cold, etc generated randomly ||
+|| Biocoating || Suit || -- || -- || chitin plate; light armour for casters (no casting deduction) ||
+|| Athletic || Suit || -- || -- || sacrifice armour for movement speed and agility ||
+
+===Unique Armour===
+
+other items will be unique in that they don't belong to a particular set
+
+|| Item Name || Item Class || Main Stats Bonus || Resistance Bonus || Description ||
+|| Tactical Helmet || Helmet || -- || + LOS distance || goggles ||
+|| Pirate Hat || Helmet || -- || -- || -- ||
+|| Viking Helmet || Helmet || -- || -- || -- ||
+|| Ninja Shoes || Boots || -- || -- || -- ||
+|| Magical Pants || Greaves || -- || -- || -- ||
+
 
 ===Ranged Weapons===
 
