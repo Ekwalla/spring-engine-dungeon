@@ -24,6 +24,7 @@ other items will be unique in that they don't belong to a particular set
 
 || Item Name || Item Class || Main Stats Bonus || Resistance Bonus || Description ||
 || Recon Helmet || Helmet || -- || + LOS distance || goggles ||
+|| Pyschic Enhancer || Helmet || -- || +concentration/ energy|| headpiece||
 || Hacker Head Gear || Helmet || -- || +technical skills|| -- ||
 || Marine Helmet || Helmet || -- || seismic || alien blip detector ||
 || Assassin Shoes || Boots || -- || +dodge|| -- ||
@@ -31,6 +32,14 @@ other items will be unique in that they don't belong to a particular set
 || Gravity Boots || Boots || -- || +resist heavy attacks || -- ||
 || Psychic Pants || Greaves || -- || +int/ energy || -- ||
 || Space Pants || Greaves || -- || various resistance || Makes your ass 'out of this world' ||
+|| Ruin: Blowback|| Armor Mod|| -- || percent chance of casting specific spells when attacked || -- ||
+|| Ruin: Vampire || Armor Mod|| -- || siphons enemy health to players health|| -- ||
+|| Ruin: Leech|| Armor Mod|| -- || gain energy for damage done to enemies|| -- ||
+|| Ruin: Pain|| Armor Mod|| -- || converts HP damage to loss in energy|| -- ||
+|| Ruin: Revenge|| Armor Mod|| -- || for each attack on player energy is collected for use in special attacks|| -- ||
+|| Ruin: Fire|| Armor Mod|| -- || absorbs some heat damage taken to player and converts to energy || -- ||
+|| Ruin: Cold|| Armor Mod|| -- || absorbs some cold damage taken to player and converts to energy || -- ||
+|| Ruin: Energy|| Armor Mod|| -- || absorbs some energy damage taken to player and converts to energy || -- ||
 
 
 ===Ranged Weapons===
