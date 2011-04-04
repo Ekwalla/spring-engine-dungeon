@@ -23,11 +23,14 @@ some armour will be created in "set" form
 other items will be unique in that they don't belong to a particular set
 
 || Item Name || Item Class || Main Stats Bonus || Resistance Bonus || Description ||
-|| Tactical Helmet || Helmet || -- || + LOS distance || goggles ||
-|| Pirate Hat || Helmet || -- || -- || -- ||
-|| Viking Helmet || Helmet || -- || -- || -- ||
-|| Ninja Shoes || Boots || -- || -- || -- ||
-|| Magical Pants || Greaves || -- || -- || -- ||
+|| Recon Helmet || Helmet || -- || + LOS distance || goggles ||
+|| Hacker Head Gear || Helmet || -- || +technical skills|| -- ||
+|| Marine Helmet || Helmet || -- || seismic || alien blip detector ||
+|| Assassin Shoes || Boots || -- || +dodge|| -- ||
+|| Jump Boots || Boots || -- || +speed || -- ||
+|| Gravity Boots || Boots || -- || +resist heavy attacks || -- ||
+|| Psychic Pants || Greaves || -- || +int/ energy || -- ||
+|| Space Pants || Greaves || -- || various resistance || Makes your ass 'out of this world' ||
 
 
 ===Ranged Weapons===
@@ -42,8 +45,8 @@ other items will be unique in that they don't belong to a particular set
 || sniper rifle || Ranged ||. || Kinetic / Concussion ||... ||
 || minigun || Ranged ||. || Kinetic ||... ||
 || flamethrower|| Ranged ||. || Heat ||... ||
-|| crossbow || Ranged || mini grenades, which are less powerful than hand grenades || Kinetic / Various War Head||... ||
-|| grenade launcher|| Ranged ||. || Concussion / Various War Head||... ||
+|| crossbow || Ranged || various || Kinetic / Various War Head||... ||
+|| grenade launcher|| Ranged || mini grenades, which are less powerful than hand grenades || Concussion / Various War Head||... ||
 || needle gun|| Ranged ||. || Chemical ||... ||
 || flak cannon|| Ranged ||. || Kinetic ||... ||
 || rail gun|| Ranged ||. || Kinetic ||... ||
@@ -97,7 +100,7 @@ coming soon :P
 || Cloak System || etc || etc || etc ||
 || Energy Shield || etc || etc || etc ||
 || Laser Welder || etc || lock/ unlock doors|| etc ||
-
+|| Network Interface|| etc || assists in hacking computer systems|| etc ||
 
 ===Stationary Systems===
 || Item Name || Item Class || Details || Cooldown ||
