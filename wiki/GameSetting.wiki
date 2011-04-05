@@ -32,6 +32,8 @@ unlike the small, fragmented nations of the known world, the institute spans all
 
 the institute demands purity of genetics, keeping the genotypes of the known world as a sealed system, as well as purity of technology and knowledge; they discourage any exploration and movement outside of the known world as vehemently as they despise and distrust those from other faraway lands
 
+[theInstitute]
+
 == Salvaging and Adventuring ==
 
 despite the influence of the institute, dukes and lords of the known world realize the significance of sending out adventurers to uncharted lands; even a single discovery of an unknown technology could raise the quality of life in their lands a thousandfold. these forays into the unknown are poorly documented; officially non-existant, these missions are the bread and butter of tales in alehouses and inns across the known world
