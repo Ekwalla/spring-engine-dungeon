@@ -10,6 +10,8 @@ at the start of the game, the player will pick what character class they want fr
 
 === Stat Rolling ===
 
+
+
 === Character Classes ===
 
 Psychic
@@ -17,7 +19,7 @@ Assassin
 Marine
 Hacker
 
-=== Character Stats ===
+=== Rollable Character Stats ===
 
 || shortform || full name || effects || bonuses || drawbacks ||
 || (Ag) || Agility || dodge, move || .. || .. ||
@@ -26,6 +28,14 @@ Hacker
 || (Cha) || Charisma || buying / selling || .. || .. ||
 || (Int) || Intelligence || magic damage || .. || .. ||
 || (Con) || Constitution || encumberment and base resistances || .. || .. ||
+
+=== Other Character Stats ===
+*(non-rollable, effected by other stats and items)*
+
+|| shortform || full name || effects || bonuses || drawbacks ||
+|| (Mov) || Movement Speed || determines the run speed of the character || .. || .. ||
+|| (EnM) || Encumberment Maximum || the maximum weight possibly carried by a character (determined by Con and items) || .. || .. ||
+|| (Enc) || Encumberment || the current weight % carried of total (used to effect Ag and Mov once a % is reached) || .. || .. ||
 
 === Resistances ===
 
