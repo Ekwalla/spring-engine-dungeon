@@ -5,12 +5,18 @@
 Blam! its the main mazecraft wiki page! i will use it to organize game rules and content information.
 
 == Game Information ==
+----
 === Gameplay ===
+----
 || ItemList || List of Items ||
 || DamageTypes || Types of Damage || 
 || Creeps || List of Enemies ||
 || CharacterStats || Character Stats and Generation ||
+----
 === Lore Etc ===
+----
 || GameSetting || Game setting and background ||
+----
 === Levels and Dungeons ===
 ||..||..||
+----
