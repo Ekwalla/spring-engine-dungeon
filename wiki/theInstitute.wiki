@@ -8,9 +8,9 @@ Fearful of those outside the known world, the institute will send its own soldie
 
 A largely hostile force, the institutes operatives will attack player characters on-site. They will appear as uniformed soldiers of a high level, and should be avoided for the most part except for by high level characters or as a mission element
 
-_gameplay ideas : 
-"allegiance": if institute soldiers are generated from the same set as player characters, it makes weapons and items easily interchangeable. perhaps players could equip institute armour in order to enter their territory and not be attacked 
+gameplay ideas : 
+_"allegiance": if institute soldiers are generated from the same set as player characters, it makes weapons and items easily interchangeable. perhaps players could equip institute armour in order to enter their territory and not be attacked 
 
-"institute gear" maybe non-institute NPCs would attack or run from characters wearing institute armour or amulets or other gear. maybe NPCs would offer different responses to characters with institute gear
+_"institute gear" maybe non-institute NPCs would attack or run from characters wearing institute armour or amulets or other gear. maybe NPCs would offer different responses to characters with institute gear
 
-"institute town" players could enter a generated institute base in order to access different shops and missions? perhaps even as a "main quest element" where players might have to engage and destroy the base? IDK._
+_"institute town" players could enter a generated institute base in order to access different shops and missions? perhaps even as a "main quest element" where players might have to engage and destroy the base? IDK.
