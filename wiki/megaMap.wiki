@@ -46,3 +46,4 @@ advantages?
 notes
 - if most "themed" zones are not blocked in the same manner as mazes, they will not impede travel as much and will create interesting features
 - blocks can be somewhat shared across zones... for instance, tree blocks could be used in most zones, wheras a crypt block might only occur in a graveyard zone
+- each cel of the 32x32 could be named on generation; that way if you get a mission to go to the "forest of effeminate elves" and you've visited it before then it will be easier to find your way back
