@@ -1,0 +1,35 @@
+#summary A breakdown of the character sheets
+
+== Breakdown of character sheets ==
+
+this page will contain information about character generation for player characters (and some NPCs and enemies)
+
+=== Character Generation ===
+
+at the start of the game, the player will pick what character class they want from a list. unlike other RPGS where classes are restrictive, mazecraft classes are only a "starting setup" consisting of "rolled" stats, resistances, and a starting kit.
+
+=== Stat Rolling ===
+
+=== Character Classes ===
+
+Psychic
+Assassin
+Marine
+Hacker
+
+=== Character Stats ===
+
+|| shortform || full name || effects || bonuses high || drawbacks low || (Ag) || Agility || dodge, move || .. || .. ||
+|| (Dex) || Dexterity || attack speed, tech success || .. || .. ||
+|| (Str) || Strength || melee damage || .. || .. ||
+|| (Cha) || Charisma || buying / selling || .. || .. ||
+|| (Int) || Intelligence || magic damage || .. || .. ||
+|| (Con) || Constitution || encumberment and base resistances || .. || .. ||
+
+=== Resistances ===
+
+resistance determines how much of a % of damage done by a source will be resisted by the target.
+
+base resistance is determined by constitution; if you have 11 Con, then you have a base resistance of all damage types of 11%.
+
+resistances can be raised by gaining experience and putting points into Con, or by equipping items with resistance bonuses.
