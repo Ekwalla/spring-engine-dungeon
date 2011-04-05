@@ -10,14 +10,15 @@ at the start of the game, the player will pick what character class they want fr
 
 === Stat Rolling ===
 
+8 individual numbers are taken from 3D6 rolls. the numbers are applied to the character stats in the stat placement order.
 
 
 === Character Classes ===
-
-Psychic
-Assassin
-Marine
-Hacker
+|| Class Name || Stat Placement Order || starting kit ||
+|| Psychic || (Int) (Dex) (Cha) (Ag) (Con)(Str)|| Psychic Hat, Random Wand ||
+|| Assassin || (Dex) (Ag) (Str) (Int) (Con) (Cha)|| Assassin Shoes, Random Pistol ||
+|| Marine || (Str) (Dex) (Ag) (Cha) (Int) (Con) || Marine Helmet, Random Melee ||
+|| Hacker || (Dex) (Int) (Con) (Cha) (Str) (Ag) || Hacker Pants, Knife, Random Inf-Use Item ||
 
 === Rollable Character Stats ===
 
@@ -33,9 +34,14 @@ Hacker
 *(non-rollable, effected by other stats and items)*
 
 || shortform || full name || effects || bonuses || drawbacks ||
-|| (Mov) || Movement Speed || determines the run speed of the character || .. || .. ||
+|| (Mov) || Movement Speed || Ag and Enc are used to determine the run speed of the character || .. || .. ||
 || (EnM) || Encumberment Maximum || the maximum weight possibly carried by a character (determined by Con and items) || .. || .. ||
 || (Enc) || Encumberment || the current weight % carried of total (used to effect Ag and Mov once a % is reached) || .. || .. ||
+|| (CaC) || Cast Chance || weight of worn items and Enc are used to determine percentage accuracy/chance of success for magic attacks || .. || .. ||
+|| (ABR) || Attack Bonus : Ranged || Dex and items are used to determine ranged accuracy/dmg bonus || .. || .. ||
+|| (ABM) || Attack Bonus : Melee || Str and items are used to determine melee dmg bonus || .. || .. ||
+
+although these stats are not rollable or directly alterable, they can still be effected by items.
 
 === Resistances ===
 
