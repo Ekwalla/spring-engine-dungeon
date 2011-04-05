@@ -34,9 +34,13 @@ if we had a "tile map" with "themed areas" then we could start small (just dunge
 possible pseudocode:
 
 1) create 32x32 array
+
 2) place dungeons and starting town first; mark these cells as "taken" in the array
+
 3) pick a random "untaken" cell. check adjacent cells for "taken". if they are taken, check type. randomly choose a "type" for the cell... 50% chance is will be the same as a taken adjacent cell (unless its main town or dungeon) and 50% chance it will be an unrelated type.
+
 4) repeat until all cells are typed
+
 5) use this 32x32 array as a basis for generating the more complicated "block" based map
 
 advantages?
