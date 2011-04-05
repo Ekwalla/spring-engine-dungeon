@@ -19,7 +19,8 @@ Hacker
 
 === Character Stats ===
 
-|| shortform || full name || effects || bonuses high || drawbacks low || (Ag) || Agility || dodge, move || .. || .. ||
+|| shortform || full name || effects || bonuses || drawbacks ||
+|| (Ag) || Agility || dodge, move || .. || .. ||
 || (Dex) || Dexterity || attack speed, tech success || .. || .. ||
 || (Str) || Strength || melee damage || .. || .. ||
 || (Cha) || Charisma || buying / selling || .. || .. ||
