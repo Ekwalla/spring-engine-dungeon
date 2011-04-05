@@ -6,7 +6,7 @@ Blam! its the main mazecraft wiki page! i will use it to organize game rules and
 
 || ItemList || List of Items ||
 || DamageTypes || Types of Damage || 
-|| Creeps || List of Enemies ||
+|| [Creeps] || List of Enemies ||
 || CharacterStats || Character Stats and Generation ||
 || GameSetting || Game setting and background ||
 ||..||..||
