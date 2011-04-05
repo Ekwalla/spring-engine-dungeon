@@ -10,7 +10,7 @@ at the start of the game, the player will pick what character class they want fr
 
 === Stat Rolling ===
 
-8 individual numbers are taken from 3D6 rolls. the numbers are applied to the character stats in the stat placement order.
+8 individual numbers are taken from 3D6 rolls. the numbers are applied to the character stats in the stat placement order. players are then given (6?) extra points that can be applied to the stat points in order to provide a degree of customization
 
 
 === Character Classes ===
@@ -50,3 +50,5 @@ resistance determines how much of a % of damage done by a source will be resiste
 base resistance is determined by constitution; if you have 11 Con, then you have a base resistance of all damage types of 11%.
 
 resistances can be raised by gaining experience and putting points into Con, or by equipping items with resistance bonuses.
+
+=== Leveling and Experience ===
