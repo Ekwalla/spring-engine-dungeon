@@ -50,6 +50,8 @@ local mapHeight 	= math.floor(Game.mapSizeZ)
 local mazeBlock		= 'block'
 local mazeDoor		= 'door'
 
+local groundHeight	= Spring.GetGroundHeight(1,1)
+
 local function PlaceMazeBlocks(mazegrid)
 	local blockStr = 'X'
 	local doorStr = 'D'
@@ -61,26 +63,35 @@ local function PlaceMazeBlocks(mazegrid)
 	local origx, origy = 100,100
 	local size = UnitDefNames[mazeBlock].xsize
 	size = size * 8
+	local halfsize=size/2
 
 	local teamID = Spring.GetGaiaTeamID()
-	if TESTMODE then teamID = 0; end
+	--if TESTMODE then teamID = 0; end
+	
+	
 	
 	local w, h = #mazegrid, #mazegrid[1]
+	--Spring.LevelHeightMap( origx -size/2, origy-size/2, origx + size*(w + 14), origy + size*(h + 14), 0 )
+	
 	for x= 1, w do
 		for y= 1, h do
+			
+			local px = origx+x*size 
+			local pz = origy+y*size
+			pz = mapHeight - pz
+				
 			if mazegrid[x][y] == blockStr
-				or mazegrid[x][y] == doorStr
+				--or mazegrid[x][y] == doorStr
 				then
 				
-				local px = origx+x*size 
-				local pz = origy+y*size
-				
-				pz = mapHeight - pz
 				
 				local py = Spring.GetGroundHeight(px, pz)
 				
 				createUnit[#createUnit+1] = { tiles[ mazegrid[x][y] ], px, py, pz, 0, teamID }
 			end
+			
+			Spring.LevelHeightMap( px-halfsize, pz-halfsize,  px+halfsize, pz+halfsize, groundHeight )
+			
 		end
 	end
 	
@@ -163,7 +174,8 @@ end
 
 function gadget:GameFrame(f)
 	for _, data in ipairs( createUnit ) do
-		Spring.CreateUnit( data[1], data[2], data[3], data[4], data[5], data[6] )
+		local unitID = Spring.CreateUnit( data[1], data[2], data[3], data[4], data[5], data[6] )
+		Spring.SetUnitNeutral(unitID, true)
 	end
 	createUnit = {}
 	
@@ -171,9 +183,32 @@ function gadget:GameFrame(f)
 		Spring.DestroyUnit( data[1], data[2], data[3] )
 	end
 	destroyUnit = {}
-	
 end
 
+local seenBlocks = {}
+function gadget:UnitEnteredLos(unitID, unitTeam, allyTeam, unitDefID)
+	
+	local blockHeight = 200
+	
+	if unitDefID == UnitDefNames[mazeBlock].id and allyTeam == 0 and not seenBlocks[unitID] then
+		local size = UnitDefNames[mazeBlock].xsize
+		size = size * 8
+		local halfsize = size / 2
+		halfsize = halfsize * 0.90
+		
+		--echo 'block entered los'
+		seenBlocks[unitID] = true
+		local x, y, z = Spring.GetUnitPosition(unitID)
+		Spring.LevelHeightMap( x-halfsize, z-halfsize, x+halfsize, z+halfsize, groundHeight+size )
+	end
+end
+
+function gadget:UnitCreated(unitID, unitDefID, unitTeam, builderID)
+	if unitDefID == UnitDefNames[mazeBlock].id then
+		local MC = Spring.MoveCtrl
+		MC.Enable(unitID)
+	end
+end
 
 
 ----- SYNCED -----
@@ -192,6 +227,8 @@ local function DoMaze(cmd, line, words, playerID)
 	
 	Spring.SendLuaRulesMsg(cmdline)
 end
+
+
 
 function gadget:Initialize()
 	gadgetHandler:AddChatAction('maze', DoMaze )
