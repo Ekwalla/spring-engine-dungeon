@@ -1,13 +1,13 @@
 --------------------------------------------------------------------------------
 
-local unitName = "block"
+local unitName = "mysteryblock"
 
 --------------------------------------------------------------------------------
 
 unitDef = {
 	unitname			= unitName,
-	name				= 'Block',
-	description			= 'Block',
+	name				= 'Mystery Block',
+	description			= 'Mystery Block',
 
 	--Misc
 	buildCostMetal		= 10,
@@ -19,10 +19,11 @@ unitDef = {
 	sightDistance		= 0,
 	script				= 'empty.lua',
 	
-	buildPic	= 'ARMSOLAR.png',
-	objectName	= 'walla.2.s3o',
+	isFeature			= true,
 	
-	--isFeature			= true,
+	buildPic	= 'ARMSOLAR.png',
+	objectName	= 'empty.s3o',
+	--objectName	= 'walla.2.s3o',
 	
 	--Dimensions
 	footprintX			= 8,
@@ -35,7 +36,7 @@ unitDef = {
 
 	featureDefs			= {
 		dead  = {
-			description		= "Block",
+			description		= "Mystery Block",
 			blocking		= true,
 		},
 	},
