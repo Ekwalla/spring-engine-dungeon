@@ -26,6 +26,8 @@ local unitDef = {
 	noChaseCategory	= "AIR",
 	upright			= true,
 	
+	sightDistance	= 400,
+	
 	--Dimensions
 	collisionVolumeOffsets	= "0 0 0",
 	collisionVolumeScales	= "15 30 10",
