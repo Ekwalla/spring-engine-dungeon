@@ -32,6 +32,10 @@ other items will be unique in that they don't belong to a particular set
 || Gravity Boots || Boots || -- || +resist heavy attacks || -- ||
 || Psychic Pants || Greaves || -- || +int/ energy || -- ||
 || Space Pants || Greaves || -- || various resistance || Makes your ass 'out of this world' ||
+
+===Unique Armour Enhancements===
+
+|| Item Name || Item Class || Main Stats Bonus || Resistance Bonus || Description ||
 || Ruin: Blowback|| Armor Mod|| -- || percent chance of casting specific spells when attacked || -- ||
 || Ruin: Vampire || Armor Mod|| -- || siphons enemy health to players health|| -- ||
 || Ruin: Leech|| Armor Mod|| -- || gain energy for damage done to enemies|| -- ||
