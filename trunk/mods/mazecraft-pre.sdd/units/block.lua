@@ -20,15 +20,15 @@ unitDef = {
 	script				= 'empty.lua',
 	
 	buildPic	= 'ARMSOLAR.png',
-	objectName	= 'walla.2.s3o',
+	objectName	= 'walla.3.s3o',
 	
 	--isFeature			= true,
 	
 	--Dimensions
-	footprintX			= 8,
-	footprintZ			= 8,
+	footprintX			= 16,
+	footprintZ			= 16,
 	collisionvolumeoffsets	= "0 0 0",
-	collisionvolumescales	= "80 80 80",
+	collisionvolumescales	= "280 280 280",
 	collisionvolumetest		= 1,
 	collisionvolumetype		= "box",
 	yardMap				= 'f',
