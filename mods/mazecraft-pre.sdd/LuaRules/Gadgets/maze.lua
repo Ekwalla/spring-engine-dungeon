@@ -64,11 +64,6 @@ end
 local function CreateFeature( defName, x, y, z, heading, AllyTeamID, fType )
 	createFeature[#createFeature+1] = { defName, x, y, z, heading, AllyTeamID, fType }
 end
-local function CreateMysteryBlock( x, y, z, fType )
-	--CreateFeature( 'mysteryblock', x, y, z, 0, Spring.GetGaiaTeamID(), fType )
-	CreateFeature( 'mysteryblock_dead', x, y, z, 0, 0, fType )
-	--CreateUnit( 'mysteryblock', x, y, z, 0, 0, fType )
-end
 
 local function DestroyFeature(featureID)
 	destroyFeature[#destroyFeature+1] = {featureID}
@@ -102,9 +97,7 @@ local function PlaceMazeBlocks(mazegrid)
 	--if TESTMODE then teamID = 0; end
 	
 	
-	
 	local w, h = #mazegrid, #mazegrid[1]
-	--Spring.LevelHeightMap( origx -size/2, origy-size/2, origx + size*(w + 14), origy + size*(h + 14), 0 )
 	
 	for x= 1, w do
 		for y= 1, h do
@@ -122,11 +115,8 @@ local function PlaceMazeBlocks(mazegrid)
 				
 				fType = 'block'
 				
-				--createUnit[#createUnit+1] = { tiles[ mazegrid[x][y] ], px, py, pz, 0, teamID }
+				CreateUnit( mazeBlock, px, py, pz, 0, teamID )
 			end
-			
-			AddTerraBlock( px-lesshalfsize, pz-lesshalfsize,  px+lesshalfsize, pz+lesshalfsize, size )
-			CreateMysteryBlock( px, py, pz, fType )
 			
 			
 			
@@ -193,7 +183,8 @@ local function GetFeaturesInLos()
 		local features = Spring.GetFeaturesInRectangle(x-viewRad, z-viewRad, x+viewRad, z+viewRad)
 		for _, fID in ipairs(features) do
 			local fx, fy, fz = Spring.GetFeaturePosition(fID)
-			if Spring.IsPosInLos(fx, fy, fz, 0) then
+			--if Spring.IsPosInLos(fx, fy, fz, 0) then
+			if Spring.IsPosInLos(fx, groundHeight, fz, 0) then
 				visFeatures[fID] = true
 			end
 		end
@@ -201,32 +192,6 @@ local function GetFeaturesInLos()
 	return visFeatures
 end
 
-local function ConvertBlock(featureID, toBlock)
-	if toBlock == 'blank' then
-		local x,y,z = Spring.GetFeaturePosition(featureID)
-		local fdid = Spring.GetFeatureDefID(featureID)
-		local fd = FeatureDefs[fdid]
-		local size = fd.xsize
-		size = size * 8
-		local halfsize=size/2
-		RemTerraBlock( x-halfsize, z-halfsize,  x+halfsize, z+halfsize )
-	elseif toBlock == 'block' then
-		local x,y,z = Spring.GetFeaturePosition(featureID)
-		CreateUnit( mazeBlock, x, y, z, 0, Spring.GetGaiaTeamID() )
-		--CreateFeature( 'block_dead', x, y, z, 0, Spring.GetGaiaTeamID() )
-	end
-	DestroyFeature(featureID)
-end
-
-local function CheckFeaturesInLos()
-	local visFeatures = GetFeaturesInLos()
-	for fID, _ in pairs(visFeatures) do
-		if mysteryBlocks[fID] then
-			ConvertBlock(fID, mysteryBlocks[fID])
-			mysteryBlocks[fID] = nil
-		end
-	end
-end
 
 local function FixBlockPosition(unitID)
 	local x,y,z = Spring.GetUnitPosition(unitID)
@@ -234,6 +199,38 @@ local function FixBlockPosition(unitID)
 	MC.SetPosition(unitID, x,groundHeight,z)
 end
 
+local function CreateAndDestroyUnits()
+	for _, data in ipairs( createUnit ) do
+		local unitID = Spring.CreateUnit( data[1], data[2], data[3], data[4], data[5], data[6] )
+		Spring.SetUnitNeutral(unitID, true)
+		if data[7] then
+			blocks[unitID] = data[7]
+		end
+	end
+	createUnit = {}
+	
+	for _, data in ipairs( destroyUnit ) do
+		Spring.DestroyUnit( data[1], data[2], data[3] )
+	end
+	destroyUnit = {}
+end
+local function CreateAndDestroyFeatures()
+	for _, data in ipairs( createFeature ) do
+		local x,y,z = data[2], data[3], data[4]
+		local fID = Spring.CreateFeature( data[1], x,y,z , data[5], data[6] )
+		if data[7] then
+			--Spring.SetFeaturePosition( fID, x, groundHeight, z, false )
+			mysteryBlocks[fID] = data[7]
+		end
+	end
+	createFeature = {}
+	
+	
+	for _, data in ipairs( destroyFeature ) do
+		Spring.DestroyFeature( data[1] )
+	end
+	destroyFeature = {}
+end
 ---------------------------------------
 --callins
 
@@ -286,54 +283,28 @@ function gadget:RecvLuaMsg(msg, playerID)
 end
 
 function gadget:GameFrame(f)
-	for _, data in ipairs( createUnit ) do
-		local unitID = Spring.CreateUnit( data[1], data[2], data[3], data[4], data[5], data[6] )
-		Spring.SetUnitNeutral(unitID, true)
-		if data[7] then
-			blocks[unitID] = data[7]
-		end
-	end
-	createUnit = {}
-	
-	for _, data in ipairs( createFeature ) do
-		local x,y,z = data[2], data[3], data[4]
-		local fID = Spring.CreateFeature( data[1], x,y,z , data[5], data[6] )
-		if data[7] then
-			--Spring.SetFeaturePosition( fID, x, groundHeight, z, false )
-			mysteryBlocks[fID] = data[7]
-		end
-	end
-	createFeature = {}
-	
-	for _, data in ipairs( destroyUnit ) do
-		Spring.DestroyUnit( data[1], data[2], data[3] )
-	end
-	destroyUnit = {}
-	
-	for _, data in ipairs( destroyFeature ) do
-		Spring.DestroyFeature( data[1] )
-	end
-	destroyFeature = {}
-	
-	CheckFeaturesInLos()
+	CreateAndDestroyUnits()
+	CreateAndDestroyFeatures()
 	
 end
---[[
+-- [[
 local seenBlocks = {}
 function gadget:UnitEnteredLos(unitID, unitTeam, allyTeam, unitDefID)
 	
-	local blockHeight = 200
-	
 	if unitDefID == UnitDefNames[mazeBlock].id and allyTeam == 0 and not seenBlocks[unitID] then
+		--echo 'it entered los! terraform now'
 		local size = UnitDefNames[mazeBlock].xsize
 		size = size * 8
 		local halfsize = size / 2
-		halfsize = halfsize * 0.90
+		local lesshalfsize = halfsize * 0.80
 		
-		--echo 'block entered los'
 		seenBlocks[unitID] = true
 		local x, y, z = Spring.GetUnitPosition(unitID)
-		Spring.LevelHeightMap( x-halfsize, z-halfsize, x+halfsize, z+halfsize, groundHeight+size )
+		--Spring.LevelHeightMap( x-lesshalfsize, z-lesshalfsize, x+lesshalfsize, z+lesshalfsize, groundHeight+size )
+		AddTerraBlock(x-lesshalfsize, z-lesshalfsize, x+lesshalfsize, z+lesshalfsize, size )
+		--when terraforming it makes the blocks invisible (unless the terraform size is less than 10% of height)
+		Spring.SetUnitAlwaysVisible(unitID, true) 
+		
 	end
 end
 --]]
@@ -343,30 +314,6 @@ function gadget:UnitCreated(unitID, unitDefID, unitTeam, builderID)
 		FixBlockPosition(unitID)
 	end
 end
-
-function gadget:FeatureCreated(featureID, allyTeam)
-	--local x,y,z = Spring.GetFeaturePosition(featureID)
-	--Spring.SetFeaturePosition( featureID, x, -62, z, false )
-	
-	-- [[
-	local fdid = Spring.GetFeatureDefID(featureID)
-	--local fd = FeatureDefs[fdid]
-	
-	if
-		fdid == FeatureDefNames['mysteryblock_dead'].id
-		or fdid == FeatureDefNames['block_dead'].id
-		then
-		
-		local x,y,z = Spring.GetFeaturePosition(featureID)
-		Spring.SetFeaturePosition( featureID, x, groundHeight, z, false )
-	end
-	
-	if unitDefID == 'block_dead' then
-		--Spring.SetFeatureAlwaysVisible(featureID)
-	end
-	--]]
-end
-
 
 
 
