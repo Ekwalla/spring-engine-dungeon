@@ -49,24 +49,24 @@ other items will be unique in that they don't belong to a particular set
 ===Ranged Weapons===
 
 || Item Name || Item Class || Details || Damage Type || Cooldown ||
-|| ..Pistols..|| .. || .. || .. ||... ||
+|| _..Pistols.._|| .. || .. || .. ||... ||
 || crossbow || Ranged || various || Kinetic / Various War Head||... ||
 || slug pistol || Ranged ||. || Kinetic / Various War Head ||... ||
-|| ..SMGS..|| .. || .. || .. ||... ||
+|| _..SMGS.._|| .. || .. || .. ||... ||
 || submachinegun || Ranged ||. || Kinetic ||... ||
 || needle gun|| Ranged ||. || Chemical ||... ||
 || auto cannon || Ranged ||. || Kinetic ||... ||
 || beam cannon || Ranged ||. || Energy / Heat||... ||
-|| ..Shotguns..|| .. || .. || .. ||... ||
+|| _..Shotguns.._|| .. || .. || .. ||... ||
 || combat shotgun || Ranged ||. || Concussion ||... ||
 || flak cannon|| Ranged ||. || Kinetic ||... ||
-|| ..Rifles..|| .. || .. || .. ||... ||
+|| _..Rifles.._|| .. || .. || .. ||... ||
 || assault rifle || Ranged ||. || Kinetic ||... ||
 || laser rifle || Ranged ||. || Energy / Heat ||... ||
 || plasma rifle || Ranged ||. || Energy / Heat ||... ||
 || sniper rifle || Ranged ||. || Kinetic / Concussion ||... ||
 || rail gun|| Ranged ||. || Kinetic ||... ||
-|| ..Heavy..|| .. || .. || .. ||... ||
+|| _..Heavy.._|| .. || .. || .. ||... ||
 || minigun || Ranged ||. || Kinetic ||... ||
 || flamethrower|| Ranged ||. || Heat ||... ||
 || grenade launcher|| Ranged || mini grenades, which are less powerful than hand grenades || Concussion / Various War Head||... ||
