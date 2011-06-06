@@ -11,7 +11,7 @@ function gadget:GetInfo()
     date      = "2009-5-30",
     license   = "GNU GPL, v2 or later",
     layer     = 0,
-    enabled   = true  --  loaded by default?
+    enabled   = false  --  loaded by default?
   }
 end
 
@@ -22,9 +22,11 @@ local CMD_REPEAT 	= CMD.REPEAT
 local CMD_WAIT 		= CMD.WAIT
 
 local cloak = {
+  --[[
 	[ UnitDefNames['armflea'].id ] = true,
 	[ UnitDefNames['armtick'].id ] = true,
 	[ UnitDefNames['corroach'].id ] = true,
+	--]]
 }
 
 local repeater = {}

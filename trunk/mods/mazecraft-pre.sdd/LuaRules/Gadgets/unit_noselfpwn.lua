@@ -18,8 +18,8 @@ end
 --------------------------------------------------------------------------------
 
 local exceptionList = {
-  "corsilo",
-  "firewalker",
+  --"corsilo",
+  --"firewalker",
 }
   
 if (not gadgetHandler:IsSyncedCode()) then

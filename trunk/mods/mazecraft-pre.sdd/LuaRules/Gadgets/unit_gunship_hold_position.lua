@@ -9,7 +9,7 @@ function gadget:GetInfo()
       date      = "15 Dec 2010",
       license   = "GNU GPL, v2 or later",
       layer     = 0,
-      enabled   = true  
+      enabled   = false  
    }
 end
 
@@ -29,12 +29,14 @@ local CMD_SET_WANTED_MAX_SPEED = CMD.SET_WANTED_MAX_SPEED
 --------------------------------------------------------------------------------
 
 local holdUnits = {
+   --[[
 	[UnitDefNames["armkam"].id] = true,
 	[UnitDefNames["bladew"].id] = true,
 	[UnitDefNames["corape"].id] = true,
 	[UnitDefNames["armbrawl"].id] = true,
 	[UnitDefNames["blackdawn"].id] = true,
 	[UnitDefNames["corcrw"].id] = true,
+	--]]
 }
 
 local units = {}
