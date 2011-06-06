@@ -40,7 +40,8 @@ local unitsCount = 0
 
 --It looks like rezzed units HP is set just after UnitCreated so their HP has to be changed 1 frame latter
 
-local terraunitDefID = UnitDefNames["terraunit"].id
+--local terraunitDefID = UnitDefNames["terraunit"].id
+local terraunitDefID = 0
 
 function gadget:UnitCreated(unitID, unitDefID)
 	local health, maxHealth = spGetUnitHealth(unitID)
