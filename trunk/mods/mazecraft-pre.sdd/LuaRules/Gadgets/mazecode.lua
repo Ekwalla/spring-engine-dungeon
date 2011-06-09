@@ -8,6 +8,8 @@
 
 local echo = Spring.Echo
 
+echo("Does rawset exist at all?", getfenv(0).rawset)
+
 
 ---------- CLASS MazeMaster
 
