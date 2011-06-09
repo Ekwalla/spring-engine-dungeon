@@ -202,9 +202,10 @@ end
 local function CreateAndDestroyUnits()
 	for _, data in ipairs( createUnit ) do
 		local unitID = Spring.CreateUnit( data[1], data[2], data[3], data[4], data[5], data[6] )
-		Spring.SetUnitNeutral(unitID, true)
-		if data[7] then
-			blocks[unitID] = data[7]
+		if unitID then
+			if data[7] then
+				blocks[unitID] = data[7]
+			end
 		end
 	end
 	createUnit = {}
@@ -311,6 +312,7 @@ end
 
 function gadget:UnitCreated(unitID, unitDefID, unitTeam, builderID)
 	if unitDefID == UnitDefNames[mazeBlock].id then
+		Spring.SetUnitNeutral(unitID, true)
 		FixBlockPosition(unitID)
 	end
 end
