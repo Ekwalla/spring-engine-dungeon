@@ -1,0 +1,1 @@
+Fire damage is done by heat sources such as open flames or heated surfaces

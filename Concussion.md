@@ -1,0 +1,1 @@
+Concussion is "blunt" damage done by sources with a hard impact but low velocity, such as clubs or shotguns. Concussion will "push" targets according to concussive damage / weight of target

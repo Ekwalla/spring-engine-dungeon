@@ -1,0 +1,1 @@
+Chemical damage is done by sources such as caustic or chemical based ttacks. it has an "over time" lingering damage effect (WC3 poison)

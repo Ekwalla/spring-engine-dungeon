@@ -1,0 +1,1 @@
+Cold damage is done by sources such as ice or weather based attacks. it has a slowing effect

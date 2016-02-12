@@ -1,0 +1,1 @@
+Kinetic Damage is generally done by fast moving objects such as bullets or other projectiles.
